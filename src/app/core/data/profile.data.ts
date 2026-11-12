@@ -4,43 +4,39 @@
  * ---------------------------------------------------------------------------
  * TODO: editar este archivo con los datos reales del autor.
  * Todo el contenido visible del perfil (textos, enlaces, habilidades y
- * mÃ©tricas) se alimenta desde aquÃ­; no hace falta tocar los templates.
+ * métricas) se alimenta desde aquí; no hace falta tocar los templates.
  * ---------------------------------------------------------------------------
  */
 export const PROFILE: Profile = {
-  // TODO: editar nombre completo.
   name: 'Juan Diego Rodríguez Ortiz',
-  // TODO: editar nombre corto para la marca del encabezado.
   shortName: 'Juan Diego',
 
-  role: 'Estudiante de IngenierÃ­a de Sistemas',
+  role: 'Estudiante de Ingeniería de Sistemas',
   institution: 'Unidad Central del Valle del Cauca (UCEVA)',
-  // TODO: editar ciudad y paÃ­s.
-  location: 'TuluÃ¡, Valle del Cauca, Colombia',
+  // TODO: editar (verificar ciudad y país).
+  location: 'Tuluá, Valle del Cauca, Colombia',
 
-  headline: 'Convierto ideas en software claro, Ãºtil y desplegable.',
-  // TODO: editar la presentaciÃ³n profesional con tu experiencia real.
+  headline: 'Convierto ideas en software claro, útil y desplegable.',
   summary:
-    'Soy estudiante de IngenierÃ­a de Sistemas en la UCEVA y me apasiona construir ' +
-    'aplicaciones web completas: desde el modelado de datos y la arquitectura hasta ' +
-    'la interfaz, las pruebas y el despliegue. Este portafolio reÃºne cinco proyectos ' +
-    'acadÃ©micos y personales que muestran mi proceso de aprendizaje y mi enfoque en ' +
-    'las buenas prÃ¡cticas de ingenierÃ­a de software.',
+    'Tengo 20 años y curso 8.º semestre de Ingeniería de Sistemas en la UCEVA. ' +
+    'Me apasiona construir aplicaciones web completas: desde el modelado de datos y ' +
+    'la arquitectura hasta la interfaz, las pruebas y el despliegue. Este portafolio ' +
+    'reúne cinco proyectos académicos y personales que muestran mi proceso de ' +
+    'aprendizaje y mi enfoque en las buenas prácticas de ingeniería de software.',
 
-  // TODO: reemplazar `avatar.svg` por tu fotografÃ­a (por ejemplo, `avatar.jpg`).
+  // TODO: reemplazar `avatar.svg` por tu fotografía (por ejemplo, `avatar.jpg`).
   avatarUrl: 'avatar.svg',
-  // TODO: editar el texto alternativo si cambias la fotografÃ­a.
   avatarAlt: 'Avatar ilustrado de Juan Diego Rodríguez Ortiz',
 
-  availability: 'Disponible para proyectos acadÃ©micos y colaboraciones',
-  focus: 'Desarrollo web full stack Â· Arquitectura de software Â· CI/CD',
+  availability: 'Disponible para proyectos académicos y colaboraciones',
+  focus: 'Desarrollo web full stack · Arquitectura de software · CI/CD',
 
   // TODO: editar el correo de contacto.
   email: 'juan.diego@uceva.edu.co',
-  contactTitle: 'Â¿Construimos algo juntos?',
+  contactTitle: '¿Construimos algo juntos?',
   contactMessage:
-    'Estoy abierto a prÃ¡cticas, proyectos colaborativos y conversaciones sobre ' +
-    'desarrollo web, arquitectura y automatizaciÃ³n. EscrÃ­beme y hablemos.',
+    'Estoy abierto a prácticas, proyectos colaborativos y conversaciones sobre ' +
+    'desarrollo web, arquitectura y automatización. Escríbeme y hablemos.',
 
   socialLinks: [
     {
@@ -55,14 +51,14 @@ export const PROFILE: Profile = {
       icon: 'linkedin',
     },
     {
-      // TODO: editar el correo (tambiÃ©n debes actualizarlo en `email`).
+      // TODO: editar el correo (también debes actualizarlo en `email`).
       label: 'Correo',
       url: 'mailto:juan.diego@uceva.edu.co',
       icon: 'mail',
     },
   ],
 
-  // TODO: ajustar los niveles (0-100) segÃºn tu experiencia real.
+  // TODO: ajustar los niveles (0-100) según tu experiencia real.
   languages: [
     { name: 'TypeScript', level: 85 },
     { name: 'Java', level: 78 },
@@ -71,7 +67,7 @@ export const PROFILE: Profile = {
     { name: 'JavaScript', level: 82 },
   ],
 
-  // TODO: editar las tecnologÃ­as y herramientas que quieras destacar.
+  // TODO: editar las tecnologías y herramientas que quieras destacar.
   technologies: [
     'Angular',
     'Node.js',
@@ -88,16 +84,15 @@ export const PROFILE: Profile = {
   // TODO: editar tus habilidades blandas.
   softSkills: [
     'Trabajo en equipo',
-    'ComunicaciÃ³n efectiva',
-    'Pensamiento analÃ­tico',
+    'Comunicación efectiva',
+    'Pensamiento analítico',
     'Aprendizaje continuo',
   ],
 
-  // TODO: editar o ampliar las mÃ©tricas destacadas.
+  // TODO: editar o ampliar las métricas destacadas.
   highlights: [
-    { value: 'UCEVA', label: 'IngenierÃ­a de Sistemas' },
-    { value: 'Full Stack', label: 'Perfil de formaciÃ³n' },
-    { value: 'CI/CD', label: 'InterÃ©s profesional' },
+    { value: 'UCEVA', label: 'Ingeniería de Sistemas' },
+    { value: 'Full Stack', label: 'Perfil de formación' },
+    { value: 'CI/CD', label: 'Interés profesional' },
   ],
 };
-

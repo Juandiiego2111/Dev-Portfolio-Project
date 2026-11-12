@@ -22,7 +22,7 @@ export class AppComponent {
   constructor() {
     const profile = this.profile();
 
-    this.titleService.setTitle(`${profile.name} | Portafolio profesional`);
+    this.titleService.setTitle(`${profile.name} | Portafolio`);
     this.metaService.updateTag({
       name: 'description',
       content:

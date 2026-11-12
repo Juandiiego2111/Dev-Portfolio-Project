@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { PROFILE } from './core/data/profile.data';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -28,12 +29,13 @@ describe('AppComponent', () => {
     expect(element.querySelector('app-footer')).not.toBeNull();
   });
 
-  it('should render the profile name in the main heading', () => {
+  it('should render the full profile name in the main heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const element = fixture.nativeElement as HTMLElement;
+    const heading = element.querySelector('h1')?.textContent?.replace(/\s+/g, ' ').trim();
 
-    expect(element.querySelector('h1')?.textContent).toContain('Juan Diego');
+    expect(heading).toContain(PROFILE.name);
   });
 
   it('should render the five project cards', () => {
@@ -48,7 +50,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
 
-    expect(document.title).toContain('Portafolio profesional');
-    expect(document.title).toContain('Juan Diego');
+    expect(document.title).toBe(`${PROFILE.name} | Portafolio`);
   });
 });
