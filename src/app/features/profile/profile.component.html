@@ -1,0 +1,207 @@
+<section id="sobre-mi" class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <span class="eyebrow__dot" aria-hidden="true"></span>
+        Portafolio · {{ profile().role }}
+      </p>
+
+      <h1 id="hero-title" class="hero__title">
+        Hola, soy
+        <span class="text-gradient">{{ profile().name }}</span>
+      </h1>
+
+      <p class="hero__headline">{{ profile().headline }}</p>
+      <p class="hero__summary">{{ profile().summary }}</p>
+
+      <ul class="hero__meta">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3 9.5 12 4l9 5.5M5.5 10v8m4.5-8v8m4-8v8m4.5-8v8M3.5 20h17"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            />
+          </svg>
+          {{ profile().institution }}
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            />
+            <circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          {{ profile().location }}
+        </li>
+      </ul>
+
+      <div class="hero__actions">
+        <a class="button button--primary button--large" href="#proyectos">
+          Explorar proyectos
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path
+              d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+            />
+          </svg>
+        </a>
+        <a class="button button--secondary button--large" href="#contacto">Hablemos</a>
+      </div>
+
+      <dl class="highlights" aria-label="Datos destacados del perfil">
+        @for (highlight of profile().highlights; track highlight.label) {
+          <div class="highlight">
+            <dt>{{ highlight.label }}</dt>
+            <dd>{{ highlight.value }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+
+    <aside class="hero__aside" aria-label="Tarjeta de presentación">
+      <p class="availability">
+        <span class="status-dot" aria-hidden="true"></span>
+        {{ profile().availability }}
+      </p>
+
+      <figure class="avatar-card">
+        <img
+          class="avatar-card__image"
+          [src]="profile().avatarUrl"
+          [alt]="profile().avatarAlt"
+          width="480"
+          height="480"
+          fetchpriority="high"
+        />
+      </figure>
+
+      <div class="focus-card">
+        <p class="focus-card__label">Enfoque actual</p>
+        <p class="focus-card__value">{{ profile().focus }}</p>
+        <ul class="focus-card__stack" aria-label="Tecnologías principales">
+          @for (technology of profile().technologies.slice(0, 3); track technology) {
+            <li>{{ technology }}</li>
+          }
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="habilidades" class="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <header class="section-heading">
+      <p class="eyebrow">Habilidades</p>
+      <h2 id="skills-title">Herramientas para llevar ideas a producción</h2>
+      <p class="section-heading__lead">
+        Una combinación de fundamentos de ingeniería, lenguajes y herramientas modernas para
+        construir soluciones mantenibles de principio a fin.
+      </p>
+    </header>
+
+    <div class="skills__grid">
+      <article class="skill-panel">
+        <div class="skill-panel__heading">
+          <span class="skill-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-11-4 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.7"
+              />
+            </svg>
+          </span>
+          <h3>Lenguajes de programación</h3>
+        </div>
+
+        <ul class="skill-list">
+          @for (skill of profile().languages; track skill.name) {
+            <li class="skill">
+              <div class="skill__label">
+                <span>{{ skill.name }}</span>
+                <span class="skill__level">{{ skill.level }}%</span>
+              </div>
+              <div
+                class="skill__track"
+                role="progressbar"
+                [attr.aria-label]="'Nivel en ' + skill.name"
+                [attr.aria-valuenow]="skill.level"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <span class="skill__bar" [style.width.%]="skill.level"></span>
+              </div>
+            </li>
+          }
+        </ul>
+      </article>
+
+      <article class="skill-panel">
+        <div class="skill-panel__heading">
+          <span class="skill-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.6"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="3.2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+            </svg>
+          </span>
+          <h3>Tecnologías y herramientas</h3>
+        </div>
+
+        <ul class="chip-list" aria-label="Tecnologías y herramientas">
+          @for (technology of profile().technologies; track technology) {
+            <li class="chip">{{ technology }}</li>
+          }
+        </ul>
+
+        <div class="soft-skills">
+          <h4>Habilidades blandas</h4>
+          <ul class="soft-skills__list">
+            @for (skill of profile().softSkills; track skill) {
+              <li>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path
+                    d="m4 10 4 4 8-8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                  />
+                </svg>
+                {{ skill }}
+              </li>
+            }
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

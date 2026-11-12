@@ -1,0 +1,29 @@
+<section id="proyectos" class="projects" aria-labelledby="projects-title">
+  <div class="projects__decoration" aria-hidden="true"></div>
+
+  <div class="container">
+    <header class="projects__heading">
+      <div class="projects__heading-copy">
+        <p class="eyebrow">Catálogo de proyectos</p>
+        <h2 id="projects-title">Cinco proyectos, una forma de construir</h2>
+        <p class="projects__lead">
+          Una selección de trabajos académicos y personales donde aplico arquitectura, desarrollo
+          full stack, pruebas y automatización de despliegues.
+        </p>
+      </div>
+
+      <p class="projects__counter" [attr.aria-label]="total() + ' proyectos publicados'">
+        <strong>{{ total() }}</strong>
+        <span>proyectos<br />publicados</span>
+      </p>
+    </header>
+
+    <div class="projects__grid">
+      @for (project of projects(); track project.id; let index = $index) {
+        <app-project-card [project]="project" [position]="index + 1" />
+      } @empty {
+        <p class="projects__empty">Aún no hay proyectos publicados en el catálogo.</p>
+      }
+    </div>
+  </div>
+</section>

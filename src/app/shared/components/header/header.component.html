@@ -1,0 +1,88 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a
+      class="brand"
+      href="#inicio"
+      [attr.aria-label]="'Ir al inicio — ' + profile().shortName"
+      (click)="closeMenu()"
+    >
+      <span class="brand__mark" aria-hidden="true">{{ initials() }}</span>
+      <span class="brand__text">
+        <strong>{{ profile().shortName }}</strong>
+        <span>{{ profile().role }}</span>
+      </span>
+    </a>
+
+    <nav
+      id="primary-navigation"
+      class="nav"
+      [class.nav--open]="menuOpen()"
+      aria-label="Navegación principal"
+    >
+      <a class="nav__link" href="#sobre-mi" (click)="closeMenu()">Sobre mí</a>
+      <a class="nav__link" href="#habilidades" (click)="closeMenu()">Habilidades</a>
+      <a class="nav__link" href="#proyectos" (click)="closeMenu()">Proyectos</a>
+      <a class="nav__link" href="#contacto" (click)="closeMenu()">Contacto</a>
+      <a class="nav__cta" href="#contacto" (click)="closeMenu()">
+        Hablemos
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path
+            d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+          />
+        </svg>
+      </a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button
+        class="icon-button"
+        type="button"
+        [attr.aria-label]="themeActionLabel()"
+        [attr.title]="themeActionLabel()"
+        (click)="toggleTheme()"
+      >
+        @if (effectiveTheme() === 'dark') {
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="1.7"
+            />
+          </svg>
+        } @else {
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.7"
+            />
+          </svg>
+        }
+      </button>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-controls="primary-navigation"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+        (click)="toggleMenu()"
+      >
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+    </div>
+  </div>
+</header>
