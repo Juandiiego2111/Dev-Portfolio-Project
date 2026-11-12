@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portafolio profesional | Juan Diego</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portafolio profesional de Juan Diego, estudiante de Ingeniería de Sistemas en la UCEVA. Proyectos de desarrollo web, arquitectura de software y CI/CD."
+    />
+    <meta name="author" content="Juan Diego" />
+    <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Aplica el tema guardado antes del primer render para evitar un destello.
+      // La clave debe coincidir con ThemeService (src/app/core/services/theme.service.ts).
+      (function () {
+        try {
+          var theme = localStorage.getItem('portfolio-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          // El almacenamiento puede estar bloqueado; se usa prefers-color-scheme.
+        }
+      })();
+    </script>
+  </head>
+  <body id="inicio">
+    <app-root></app-root>
+    <noscript>
+      <p>
+        Este portafolio profesional necesita JavaScript para mostrar el catálogo de proyectos.
+        También puedes visitar el repositorio en
+        <a href="https://github.com/Juandiiego2111/Dev-Portfolio-Project">GitHub</a>.
+      </p>
+    </noscript>
+  </body>
+</html>

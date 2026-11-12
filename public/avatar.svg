@@ -1,0 +1,120 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="480"
+  height="480"
+  viewBox="0 0 480 480"
+  fill="none"
+  role="img"
+  aria-labelledby="avatarTitle avatarDesc"
+>
+  <!-- TODO: reemplazar este placeholder por una fotografía real si se desea. -->
+  <title id="avatarTitle">Avatar de Juan Diego</title>
+  <desc id="avatarDesc">
+    Ilustración abstracta con las iniciales JD sobre un fondo azul profundo con detalles
+    tecnológicos.
+  </desc>
+
+  <defs>
+    <linearGradient id="avatarBg" x1="24" y1="0" x2="456" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101A36" />
+      <stop offset="0.55" stop-color="#0B1020" />
+      <stop offset="1" stop-color="#12102B" />
+    </linearGradient>
+    <linearGradient id="avatarRing" x1="112" y1="88" x2="382" y2="356" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818CF8" />
+      <stop offset="0.55" stop-color="#A78BFA" />
+      <stop offset="1" stop-color="#22D3EE" />
+    </linearGradient>
+    <linearGradient id="avatarOrb" x1="140" y1="120" x2="350" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4338CA" />
+      <stop offset="0.55" stop-color="#6D28D9" />
+      <stop offset="1" stop-color="#0E7490" />
+    </linearGradient>
+    <radialGradient id="avatarGlow" cx="0" cy="0" r="1" gradientTransform="translate(95 76) rotate(48) scale(210)">
+      <stop stop-color="#4F46E5" stop-opacity="0.48" />
+      <stop offset="1" stop-color="#4F46E5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="avatarGlowTwo" cx="0" cy="0" r="1" gradientTransform="translate(420 408) rotate(-140) scale(220)">
+      <stop stop-color="#0891B2" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#0891B2" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="avatarGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" stroke="#FFFFFF" stroke-opacity="0.045" />
+    </pattern>
+  </defs>
+
+  <rect width="480" height="480" fill="url(#avatarBg)" />
+  <rect width="480" height="480" fill="url(#avatarGrid)" />
+  <rect width="480" height="480" fill="url(#avatarGlow)" />
+  <rect width="480" height="480" fill="url(#avatarGlowTwo)" />
+
+  <text
+    x="38"
+    y="70"
+    fill="#67E8F9"
+    fill-opacity="0.72"
+    font-family="'Cascadia Code', Consolas, monospace"
+    font-size="17"
+    font-weight="600"
+  >
+    &lt;/&gt;
+  </text>
+
+  <circle cx="404" cy="54" r="3" fill="#818CF8" fill-opacity="0.8" />
+  <circle cx="418" cy="54" r="3" fill="#A78BFA" fill-opacity="0.55" />
+  <circle cx="432" cy="54" r="3" fill="#22D3EE" fill-opacity="0.45" />
+
+  <circle cx="240" cy="222" r="151" stroke="url(#avatarRing)" stroke-opacity="0.3" stroke-dasharray="3 10" />
+  <circle cx="240" cy="222" r="121" fill="url(#avatarOrb)" fill-opacity="0.42" stroke="url(#avatarRing)" stroke-opacity="0.55" />
+
+  <circle cx="240" cy="222" r="100" fill="#0B1020" fill-opacity="0.5" />
+
+  <text
+    x="240"
+    y="258"
+    text-anchor="middle"
+    fill="#F8FAFF"
+    font-family="Sora, 'Segoe UI', sans-serif"
+    font-size="106"
+    font-weight="800"
+    letter-spacing="-7"
+  >
+    JD
+  </text>
+
+  <path d="M132 222H98" stroke="#818CF8" stroke-opacity="0.55" stroke-linecap="round" />
+  <path d="M382 222H348" stroke="#22D3EE" stroke-opacity="0.55" stroke-linecap="round" />
+  <circle cx="98" cy="222" r="3" fill="#818CF8" />
+  <circle cx="348" cy="222" r="3" fill="#22D3EE" />
+
+  <rect x="156" y="354" width="168" height="1" fill="url(#avatarRing)" fill-opacity="0.45" />
+  <text
+    x="240"
+    y="381"
+    text-anchor="middle"
+    fill="#C7D2FE"
+    fill-opacity="0.82"
+    font-family="'Segoe UI', sans-serif"
+    font-size="10"
+    font-weight="600"
+    letter-spacing="3.4"
+  >
+    INGENIERÍA DE SISTEMAS
+  </text>
+  <text
+    x="240"
+    y="401"
+    text-anchor="middle"
+    fill="#94A3B8"
+    fill-opacity="0.8"
+    font-family="'Segoe UI', sans-serif"
+    font-size="8.5"
+    font-weight="500"
+    letter-spacing="2.6"
+  >
+    DESARROLLO · DISEÑO · CI/CD
+  </text>
+
+  <path d="M38 400V438H76" stroke="#818CF8" stroke-opacity="0.35" stroke-linecap="round" />
+  <path d="M442 80V42H404" stroke="#22D3EE" stroke-opacity="0.3" stroke-linecap="round" />
+</svg>

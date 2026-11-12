@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="faviconBg" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" />
+      <stop offset="0.55" stop-color="#7C3AED" />
+      <stop offset="1" stop-color="#0891B2" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#faviconBg)" />
+  <text
+    x="32"
+    y="42"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Sora, 'Segoe UI', sans-serif"
+    font-size="26"
+    font-weight="800"
+    letter-spacing="-1.5"
+  >
+    JD
+  </text>
+</svg>
