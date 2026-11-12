@@ -1,0 +1,108 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+  BASE_HREF: /Dev-Portfolio-Project/
+  BUILD_DIR: dist/dev-portfolio-project/browser
+  SITE_URL: https://juandiiego2111.github.io/Dev-Portfolio-Project/
+
+jobs:
+  build:
+    name: Test and build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js (LTS)
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test:ci
+
+      - name: Build application
+        run: npm run build -- --base-href=${{ env.BASE_HREF }}
+
+      - name: Add 404 fallback
+        run: cp "${{ env.BUILD_DIR }}/index.html" "${{ env.BUILD_DIR }}/404.html"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ env.BUILD_DIR }}
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  verify:
+    name: Verify deployment
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the published site
+        env:
+          DEPLOYED_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          set -euo pipefail
+
+          URL="${DEPLOYED_URL:-${SITE_URL}}"
+          echo "Verificando el despliegue en: $URL"
+          echo "Esperando 5 segundos para la propagación de GitHub Pages..."
+          sleep 5
+
+          for attempt in 1 2 3 4 5; do
+            STATUS=$(curl --silent --show-error --location \
+              --max-time 20 \
+              --output site.html \
+              --write-out "%{http_code}" \
+              "$URL") || STATUS="000"
+
+            echo "Intento $attempt/5 → HTTP $STATUS"
+
+            if [ "$STATUS" = "200" ] && grep -q "Portafolio profesional" site.html; then
+              echo "✅ Despliegue verificado: la página responde 200 y contiene el portafolio."
+              exit 0
+            fi
+
+            if [ "$attempt" -lt 5 ]; then
+              echo "El sitio aún no está disponible. Reintentando en 10 segundos..."
+              sleep 10
+            fi
+          done
+
+          echo "::error::La verificación post-despliegue falló: el sitio no respondió 200 con el contenido esperado."
+          head -n 40 site.html || true
+          exit 1
