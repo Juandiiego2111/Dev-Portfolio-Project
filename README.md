@@ -147,7 +147,7 @@ Solo necesitas editar dos archivos:
    - Los puntos pendientes están marcados con `// TODO: editar`.
 2. **`src/app/core/data/projects.data.ts`**
    - Proyecto 1: portafolio actual, ya configurado con sus URLs reales.
-   - Proyectos 2 a 5: placeholders marcados con `// TODO: editar`.
+   - Proyectos 2 a 5: catálogo con la información real de cada proyecto.
    - Mantén el patrón de URLs:
      `https://github.com/Juandiiego2111/<repo>` y
      `https://juandiiego2111.github.io/<repo>/`.
