@@ -4,10 +4,6 @@ import type { Project } from '../models/project.model';
  * ---------------------------------------------------------------------------
  * Catálogo de proyectos del portafolio.
  *
- * TODO: editar los proyectos 2 a 5 con la información real. Mantén el mismo
- * formato de URLs:
- *   - Repositorio: https://github.com/Juandiiego2111/<repo>
- *   - Demo:        https://juandiiego2111.github.io/<repo>/
  * Los cambios en este archivo se reflejan automáticamente en el catálogo.
  * ---------------------------------------------------------------------------
  */
@@ -30,71 +26,88 @@ export const PROJECTS: readonly Project[] = [
     demoUrl: 'https://juandiiego2111.github.io/Dev-Portfolio-Project/',
   },
   {
-    // TODO: editar proyecto 2 (nombre, descripción, tecnologías, características y URLs).
-    id: 'sistema-gestion-academica',
-    name: 'Sistema de Gestión Académica',
+    id: 'uceva-clean-architecture',
+    name: 'Clean Architecture en Angular',
     description:
-      'Aplicación web para administrar estudiantes, cursos y calificaciones, con ' +
-      'roles diferenciados y reportes académicos consolidados.',
-    technologies: ['Angular', 'TypeScript', 'Spring Boot', 'PostgreSQL'],
-    features: [
-      'Registro y seguimiento de estudiantes y cursos',
-      'Autenticación con roles de administrador y docente',
-      'Cálculo automatizado de promedios y reportes',
-      'API REST documentada y validada con pruebas',
+      'Taller de curso realizado en equipo que aplica arquitectura limpia en un ' +
+      'cliente Angular. El desarrollo se organiza en las capas domain, ' +
+      'application, infrastructure y presentation.',
+    technologies: [
+      'Angular 20',
+      'TypeScript',
+      'Jest',
+      'Bootstrap',
+      'Clean Architecture',
+      'GitHub Actions',
     ],
-    repoUrl: 'https://github.com/Juandiiego2111/sistema-gestion-academica',
-    demoUrl: 'https://juandiiego2111.github.io/sistema-gestion-academica/',
+    features: [
+      'Módulos de usuarios, productos, cursos, pedidos y libros',
+      'Repositorios intercambiables (backend Node, Spring Boot o datos en memoria)',
+      'La demo en GitHub Pages usa datos de ejemplo',
+      '170 pruebas unitarias con cobertura del 100 %',
+      'Despliegue automático con GitHub Actions',
+    ],
+    repoUrl: 'https://github.com/Juandiiego2111/Uceva-Angular-Taller-Clean-Architecture',
+    demoUrl: 'https://juandiiego2111.github.io/Uceva-Angular-Taller-Clean-Architecture/',
   },
   {
-    // TODO: editar proyecto 3 (nombre, descripción, tecnologías, características y URLs).
-    id: 'plataforma-inventario',
-    name: 'Plataforma de Inventario',
+    id: 'taller-4-astro-angular-ssg-spa',
+    name: 'Taller 4: Astro SSG + Angular SPA',
     description:
-      'Sistema de control de inventario para pequeños negocios, enfocado en la ' +
-      'trazabilidad de productos, alertas de stock y visualización de movimientos.',
-    technologies: ['Angular', 'Node.js', 'Express', 'MongoDB'],
+      'Monorepo del curso que compara dos estrategias de interfaz: un sitio estático ' +
+      'generado con Astro y un cliente SPA publicado con Angular. Ambas aplicaciones ' +
+      'se publican juntas.',
+    technologies: ['Astro 5', 'Angular 20', 'TypeScript', 'Jest', 'Bootstrap', 'GitHub Actions'],
     features: [
-      'Gestión de productos, categorías y proveedores',
-      'Alertas automáticas de stock mínimo',
-      'Panel con indicadores de entradas y salidas',
-      'Historial de movimientos con filtros de búsqueda',
+      'Astro genera las vistas en el build',
+      'El cliente Angular se publica en la subruta /client/ con enrutamiento hash',
+      'El cliente usa datos de ejemplo en GitHub Pages',
+      '85 pruebas unitarias',
+      'Un solo workflow construye y publica ambas apps',
     ],
-    repoUrl: 'https://github.com/Juandiiego2111/plataforma-inventario',
-    demoUrl: 'https://juandiiego2111.github.io/plataforma-inventario/',
+    repoUrl: 'https://github.com/Juandiiego2111/Taller-4-Astro-Angular-SSG-SPA',
+    demoUrl: 'https://juandiiego2111.github.io/Taller-4-Astro-Angular-SSG-SPA/',
   },
   {
-    // TODO: editar proyecto 4 (nombre, descripción, tecnologías, características y URLs).
-    id: 'api-reservas',
-    name: 'API de Reservas',
+    id: 'devhub-pipelines-hash',
+    name: 'DevHub',
     description:
-      'API REST para gestionar la reserva de espacios institucionales, con control ' +
-      'de disponibilidad, autenticación y documentación interactiva.',
-    technologies: ['Node.js', 'Express', 'PostgreSQL', 'JWT'],
+      'Laboratorio de pipelines de integración y despliegue desarrollado en equipo. ' +
+      'La aplicación Angular incluye páginas de inicio, proyectos y contacto con tema ' +
+      'oscuro.',
+    technologies: ['Angular', 'TypeScript', 'SCSS', 'Angular Router', 'Vitest'],
     features: [
-      'Validación de disponibilidad por franjas horarias',
-      'Autenticación y autorización con JWT',
-      'Documentación de endpoints con OpenAPI',
-      'Pruebas de integración sobre la base de datos',
+      'Tres páginas con navegación',
+      'Enrutamiento hash para funcionar en GitHub Pages',
+      'Pruebas unitarias',
+      'Pipeline de GitHub Actions con build, deploy y verify',
     ],
-    repoUrl: 'https://github.com/Juandiiego2111/api-reservas',
-    demoUrl: 'https://juandiiego2111.github.io/api-reservas/',
+    repoUrl: 'https://github.com/Juandiiego2111/lab-pipelines-hash',
+    demoUrl: 'https://juandiiego2111.github.io/lab-pipelines-hash/',
   },
   {
-    // TODO: editar proyecto 5 (nombre, descripción, tecnologías, características y URLs).
-    id: 'tablero-analitica',
-    name: 'Tablero de Analítica',
+    id: 'parcial-ii-microfrontends-biblioteca',
+    name: 'Biblioteca con Microfrontends',
     description:
-      'Dashboard interactivo que transforma datos operativos en indicadores ' +
-      'visuales para apoyar la toma de decisiones académicas y administrativas.',
-    technologies: ['Angular', 'Python', 'FastAPI', 'Chart.js'],
-    features: [
-      'Indicadores clave con actualización por periodos',
-      'Filtros dinámicos por sede, programa y fecha',
-      'Visualizaciones responsivas y accesibles',
-      'Exportación de reportes en formato CSV',
+      'Parcial II de Arquitectura de Software con David Mora Duque y Juan Pablo Devia, ' +
+      'que construye un sistema de biblioteca con microfrontends. El autor desarrolló ' +
+      'la vertical de socios sobre un host Angular que carga libros, socios y préstamos ' +
+      'con Webpack Module Federation. Los backends originales (Node.js y Spring Boot) no ' +
+      'se despliegan.',
+    technologies: [
+      'Angular 20',
+      'Webpack Module Federation',
+      'TypeScript',
+      'Clean Architecture',
+      'GitHub Actions',
     ],
-    repoUrl: 'https://github.com/Juandiiego2111/tablero-analitica',
-    demoUrl: 'https://juandiiego2111.github.io/tablero-analitica/',
+    features: [
+      'Host y tres microfrontends publicados en un solo sitio',
+      'Cada microfrontend aplica arquitectura limpia',
+      'La demo usa datos de ejemplo (los microservicios no corren en Pages)',
+      'Despliegue automático con verificación',
+    ],
+    repoUrl: 'https://github.com/Juandiiego2111/Parcial-II-Microfrontends-Biblioteca',
+    demoUrl: 'https://juandiiego2111.github.io/Parcial-II-Microfrontends-Biblioteca/',
   },
 ];
