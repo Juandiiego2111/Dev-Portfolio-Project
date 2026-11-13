@@ -31,6 +31,13 @@ describe('ProjectsService', () => {
     }
   });
 
+  it('should expose repository and demo URLs owned by the portfolio author', () => {
+    for (const project of service.projects()) {
+      expect(project.repoUrl).toMatch(/^https:\/\/github\.com\/Juandiiego2111\//);
+      expect(project.demoUrl).toMatch(/^https:\/\/juandiiego2111\.github\.io\//);
+    }
+  });
+
   it('should expose this portfolio as the first project', () => {
     const portfolio = PROJECTS[0];
 
